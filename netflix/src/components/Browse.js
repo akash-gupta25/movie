@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import Header from './Header';
-import { useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MainContainer from './MainContainer';
 import MovieContainer from './MovieContainer';
@@ -25,9 +25,10 @@ const Browse = () => {
         if (!user) {
             navigate("/");
         }
-    }, []);
+    }, [navigate, user]);
+
     return (
-        <div >
+        <div>
             <Header />
             <div>
                 {
@@ -36,13 +37,11 @@ const Browse = () => {
                             <MainContainer />
                             <MovieContainer />
                         </>
-
                     )
                 }
-
             </div>
         </div>
-    )
+    );
 }
 
-export default Browse
+export default Browse;
